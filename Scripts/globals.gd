@@ -1,5 +1,8 @@
 extends Node
 var crystals = 0
+var speed_powerup : bool = false
+var speed_powerup_timer := 0.0
+@export var boost_durtion : float = 30.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,3 +12,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+func activate_speedpup():
+	speed_powerup = true
+	speed_powerup_timer = boost_durtion

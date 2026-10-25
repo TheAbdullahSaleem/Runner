@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bgl3o87mul6xx"]
 
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Player.tscn" id="1_r150o"]
-[ext_resource type="Script" uid="uid://cynea2ebogkdg" path="res://Scenes/main.gd" id="1_rgh2o"]
+[ext_resource type="Script" uid="uid://cynea2ebogkdg" path="res://Scripts/main.gd" id="1_rgh2o"]
 [ext_resource type="PackedScene" uid="uid://ba4mkhe2f7lma" path="res://Scenes/Score.tscn" id="2_idj7w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rgh2o"]
@@ -38,4 +38,8 @@ size = Vector3(9, 0.2, 1000)
 
 [node name="Timer" type="Timer" parent="." unique_id=1437148557]
 wait_time = 5.0
+autostart = true
+
+[node name="Timer2" type="Timer" parent="." unique_id=288887583]
+wait_time = 3.0
 autostart = true

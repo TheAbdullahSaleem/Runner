@@ -8,6 +8,8 @@ var run_val = 0
 var jump_val = 0
 var fall_val = 0
 var blend_speed = 5
+@export var speed : int = 3
+@export var boosted_speed : int = 5
 
 func handle_anim(delta):
 	match current_anim:
@@ -34,7 +36,10 @@ func update_tree():
 	anim_tree["parameters/fall/blend_amount"] = fall_val
 
 func _physics_process(delta: float) -> void:
-	movements(delta)
+	if is_on_floor():
+		current_anim = RUN
+	var target_x = (cur_lane - 1.5) * lane_width
+	velocity.x = (target_x - position.x) * delta *200
 	update_tree()
 	handle_anim(delta)
 	if not is_on_floor():
@@ -50,11 +55,12 @@ func _physics_process(delta: float) -> void:
 		cur_lane = min(cur_lane + 1 , 3)
 	if velocity == Vector3.ZERO:
 		current_anim =IDLE
-	
+	if Globals.speed_powerup:
+		velocity.z = boosted_speed
+		Globals.speed_powerup_timer -= delta
+
+	if Globals.speed_powerup_timer <= 0.2:
+		Globals.speed_powerup = false
+		velocity.z = speed
+
 	move_and_slide()
-func movements(delta):
-	velocity.z = 2
-	if is_on_floor():
-		current_anim = RUN
-	var target_x = (cur_lane - 1.5) * lane_width
-	velocity.x = (target_x - position.x) * delta *200
