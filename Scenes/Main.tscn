@@ -7,6 +7,9 @@
 [node name="CharacterBody3D" parent="." unique_id=1728798874 instance=ExtResource("1_r150o")]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1037971797]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.6703377, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1427381, 0)
 use_collision = true
-size = Vector3(1, 0.22192383, 1)
+size = Vector3(100, 0.222, 100)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=553849205]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3143425, 0.90604734, -3.0709229)

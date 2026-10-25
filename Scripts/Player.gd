@@ -35,13 +35,20 @@ func update_tree():
 	anim_tree["parameters/fall/blend_amount"] = fall_val
 
 func _physics_process(delta: float) -> void:
+	movements()
 	update_tree()
 	handle_anim(delta)
 	if not is_on_floor():
-		current_anim = FALL
-		velocity.y = -5
+		velocity.y -= 9.8*delta
+		if velocity.y < 0:
+			current_anim = FALL
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = move_toward(position.y,10,delta)
+		velocity.y = 10
+		current_anim = JUMP
 	if velocity == Vector3.ZERO:
 		current_anim =IDLE
+	
 	move_and_slide()
+func movements():
+	velocity.x = Input.get_axis("left","right")*SPEED
+	velocity.z = 10
