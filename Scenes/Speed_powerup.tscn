@@ -4,6 +4,9 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kf11u"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxero"]
+albedo_color = Color(0, 1, 1, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_nl1qf"]
 
 [node name="Speed_powerup" type="Area3D" unique_id=1193938432]
@@ -13,6 +16,7 @@ script = ExtResource("1_fijcr")
 shape = SubResource("BoxShape3D_kf11u")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2071009725]
+material_override = SubResource("StandardMaterial3D_jxero")
 mesh = SubResource("BoxMesh_nl1qf")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

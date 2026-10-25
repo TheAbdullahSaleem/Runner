@@ -28,8 +28,6 @@ shadow_enabled = true
 
 [node name="Player" parent="." unique_id=1728798874 instance=ExtResource("1_r150o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1464276, 0, 0)
-speed = null
-boosted_speed = null
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1037971797]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1427381, 0)
@@ -43,5 +41,9 @@ wait_time = 5.0
 autostart = true
 
 [node name="Timer2" type="Timer" parent="." unique_id=288887583]
-wait_time = 3.0
+wait_time = 209.0
+autostart = true
+
+[node name="Timer3" type="Timer" parent="." unique_id=1493424127]
+wait_time = 79.0
 autostart = true

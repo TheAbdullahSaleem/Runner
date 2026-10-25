@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ri1lackoaov2"]
+
+[ext_resource type="Script" uid="uid://cnhcqldmxxrvu" path="res://Scripts/jump_powerup.gd" id="1_r34pa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kf11u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fijcr"]
+albedo_color = Color(0.2775381, 5.873234e-05, 0.28250903, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nl1qf"]
+
+[node name="Jump_powerup" type="Area3D" unique_id=1193938432]
+script = ExtResource("1_r34pa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1073083949]
+shape = SubResource("BoxShape3D_kf11u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2071009725]
+material_override = SubResource("StandardMaterial3D_fijcr")
+mesh = SubResource("BoxMesh_nl1qf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

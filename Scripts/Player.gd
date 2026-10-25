@@ -11,6 +11,8 @@ var blend_speed = 5
 
 @export var speed : int = 3
 @export var boosted_speed : int = 5
+@export var jump : int = 5
+@export var boosted_jump : int = 10
 
 func handle_anim(delta):
 	match current_anim:
@@ -48,15 +50,13 @@ func _physics_process(delta: float) -> void:
 		velocity.y -= 9.8*delta
 		if velocity.y < 0:
 			current_anim = FALL
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = 10
-		current_anim = JUMP
 	if Input.is_action_just_pressed("right"):
 		cur_lane = max(cur_lane - 1 , 0)
 	if Input.is_action_just_pressed("left"):
 		cur_lane = min(cur_lane + 1 , 3)
 	if velocity == Vector3.ZERO:
 		current_anim =IDLE
+
 	if Globals.speed_powerup:
 		velocity.z = boosted_speed
 		anim_tree.set("parameters/TimeScale/scale",2)
@@ -66,4 +66,15 @@ func _physics_process(delta: float) -> void:
 		Globals.speed_powerup = false
 		anim_tree.set("parameters/TimeScale/scale",1.5)
 		velocity.z = speed
+
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		if Globals.jump_powerup:
+			velocity.y = boosted_jump
+			Globals.jump_powerup_timer -= delta
+
+		if Globals.jump_powerup_timer <= 0.2:
+			Globals.jump_powerup = false
+			velocity.y = jump
+		current_anim = JUMP
+
 	move_and_slide()
