@@ -2,6 +2,11 @@
 
 [ext_resource type="Script" uid="uid://copj37jj76467" path="res://Scripts/crystals.gd" id="1_m0csg"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y1q5r"]
+albedo_color = Color(0.90588236, 0.3372549, 0.3647059, 1)
+metallic = 1.0
+roughness = 0.2
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wfl7b"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_vhedc"]
@@ -44,6 +49,7 @@ script = ExtResource("1_m0csg")
 
 [node name="gem" type="MeshInstance3D" parent="crystal" unique_id=1664181616]
 transform = Transform3D(0.37375307, 0, 0, 0, 0.37375307, 0, 0, 0, 0.37375307, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_y1q5r")
 mesh = SubResource("ArrayMesh_6bek6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=81613282]

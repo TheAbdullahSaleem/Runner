@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dl7mp82tu4t1v"]
+
+[ext_resource type="Script" uid="uid://bsyf3hu4w8nxu" path="res://Power up.gd" id="1_psa43"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kf11u"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_nl1qf"]
+
+[node name="Power up" type="Area3D" unique_id=1193938432]
+script = ExtResource("1_psa43")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1073083949]
+shape = SubResource("BoxShape3D_kf11u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2071009725]
+mesh = SubResource("BoxMesh_nl1qf")

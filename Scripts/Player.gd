@@ -2,9 +2,8 @@ extends CharacterBody3D
 @onready var anim_tree: AnimationTree = $RUN_GUY_V1/AnimationTree
 enum {IDLE,RUN,JUMP,FALL}
 var current_anim = IDLE
-
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+var cur_lane = 0
+var lane_width = 2
 var run_val = 0
 var jump_val = 0
 var fall_val = 0
@@ -35,7 +34,7 @@ func update_tree():
 	anim_tree["parameters/fall/blend_amount"] = fall_val
 
 func _physics_process(delta: float) -> void:
-	movements()
+	movements(delta)
 	update_tree()
 	handle_anim(delta)
 	if not is_on_floor():
@@ -45,12 +44,17 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = 10
 		current_anim = JUMP
+	if Input.is_action_just_pressed("right"):
+		cur_lane = max(cur_lane - 1 , 0)
+	if Input.is_action_just_pressed("left"):
+		cur_lane = min(cur_lane + 1 , 3)
 	if velocity == Vector3.ZERO:
 		current_anim =IDLE
 	
 	move_and_slide()
-func movements():
-	velocity.x = Input.get_axis("right","left")*SPEED
+func movements(delta):
 	velocity.z = 2
 	if is_on_floor():
 		current_anim = RUN
+	var target_x = (cur_lane - 1.5) * lane_width
+	velocity.x = (target_x - position.x) * delta *200

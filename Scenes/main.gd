@@ -13,5 +13,5 @@ func _process(delta: float) -> void:
 func spawning_crystal() -> void :
 	var crystal_instance = crystal.instantiate()
 	add_child(crystal_instance)
-	crystal_instance.global_position = Vector3(randi_range(-2,1),1.1,player.global_position.z+10)
-	print("added")
+	var lane = (randi_range(0,3) - 1.5) * 2
+	crystal_instance.global_position = Vector3(lane,1.1,player.global_position.z+5)
