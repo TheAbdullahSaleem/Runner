@@ -36,6 +36,7 @@ func update_tree():
 	anim_tree["parameters/jump/blend_amount"] = jump_val
 	anim_tree["parameters/fall/blend_amount"] = fall_val
 func _physics_process(delta: float) -> void:
+	Globals.distance_covered = position.z
 	Globals.player_speed = velocity.z
 	if is_on_floor():
 		current_anim = RUN

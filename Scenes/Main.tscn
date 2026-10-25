@@ -28,6 +28,8 @@ shadow_enabled = true
 
 [node name="Player" parent="." unique_id=1728798874 instance=ExtResource("1_r150o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1464276, 0, 0)
+speed = null
+boosted_speed = null
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1037971797]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1427381, 0)
