@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://ba4mkhe2f7lma"]
 
-[ext_resource type="Script" uid="uid://bw8gr812ghuex" path="res://Scripts/score.gd" id="1_5hcfu"]
+[ext_resource type="Script" uid="uid://bw8gr812ghuex" path="res://Scripts/ui.gd" id="1_jxero"]
 
-[node name="Score" type="CanvasLayer" unique_id=1095941771]
-script = ExtResource("1_5hcfu")
+[node name="ui" type="CanvasLayer" unique_id=1095941771]
+script = ExtResource("1_jxero")
 
 [node name="Control" type="Control" parent="." unique_id=996633787]
 layout_mode = 3
@@ -20,6 +20,20 @@ anchor_left = 0.0390625
 anchor_top = 0.047839507
 anchor_right = 0.0390625
 anchor_bottom = 0.07716049
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="Control" unique_id=1360835449]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7517361
+anchor_top = 0.06481481
+anchor_right = 0.7517361
+anchor_bottom = 0.094135806
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 30
