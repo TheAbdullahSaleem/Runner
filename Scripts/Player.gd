@@ -50,5 +50,7 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 func movements():
-	velocity.x = Input.get_axis("left","right")*SPEED
-	velocity.z = 10
+	velocity.x = Input.get_axis("right","left")*SPEED
+	velocity.z = 2
+	if is_on_floor():
+		current_anim = RUN
