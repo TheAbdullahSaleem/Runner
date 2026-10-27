@@ -8,11 +8,10 @@ var run_val = 0
 var jump_val = 0
 var fall_val = 0
 var blend_speed = 5
-
-@export var speed : int = 3
-@export var boosted_speed : int = 5
+var run_anim_speed = 1.5
+@export var speed : float = 3
 @export var jump : int = 5
-@export var boosted_jump : int = 10
+@export var boosted_jump : float = 10
 
 func handle_anim(delta):
 	match current_anim:
@@ -38,8 +37,10 @@ func update_tree():
 	anim_tree["parameters/jump/blend_amount"] = jump_val
 	anim_tree["parameters/fall/blend_amount"] = fall_val
 func _physics_process(delta: float) -> void:
+	speed += 0.0001
+	run_anim_speed += 0.0001
 	Globals.distance_covered = position.z
-	Globals.player_speed = velocity.z
+	Globals.player_speed = snapped(velocity.z,0.1)
 	if is_on_floor():
 		current_anim = RUN
 	var target_x = (cur_lane - 1.5) * lane_width
@@ -58,13 +59,13 @@ func _physics_process(delta: float) -> void:
 		current_anim =IDLE
 
 	if Globals.speed_powerup:
-		velocity.z = boosted_speed
-		anim_tree.set("parameters/TimeScale/scale",2)
+		velocity.z = speed*1.5
+		anim_tree.set("parameters/TimeScale/scale",run_anim_speed*1.5)
 		Globals.speed_powerup_timer -= delta
 
 	if Globals.speed_powerup_timer <= 0.2:
 		Globals.speed_powerup = false
-		anim_tree.set("parameters/TimeScale/scale",1.5)
+		anim_tree.set("parameters/TimeScale/scale",run_anim_speed)
 		velocity.z = speed
 
 	if Input.is_action_just_pressed("jump") and is_on_floor():
