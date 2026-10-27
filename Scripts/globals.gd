@@ -8,18 +8,23 @@ var distance_covered : int = 0
 var jump_powerup : bool = false
 var jump_powerup_timer := 0.0
 var Dead : bool = false
-
+var restart : bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	process_mode = Node.PROCESS_MODE_ALWAYS
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta: float) -> void:
-	pass
+	if restart == true:
+		restart1()
 func activate_speedpup():
 	speed_powerup = true
 	speed_powerup_timer = boost_durtion
 func activate_jumppup():
 	jump_powerup = true
 	jump_powerup_timer = boost_durtion
+func restart1():
+	Globals.restart = false
+	get_tree().paused = false
+	get_tree().reload_current_scene()

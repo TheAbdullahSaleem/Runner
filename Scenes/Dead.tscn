@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://co0byoahjpgsl"]
+
+[ext_resource type="Script" uid="uid://fjcep62b25ww" path="res://Scripts/dead.gd" id="1_j28xj"]
+
+[node name="Dead" type="CanvasLayer" unique_id=1046737756]
+process_mode = 3
+script = ExtResource("1_j28xj")
+
+[node name="Control" type="Control" parent="." unique_id=805950470]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Control" unique_id=100133756]
+process_mode = 3
+layout_mode = 0
+offset_left = 618.0
+offset_top = 289.0
+offset_right = 683.0
+offset_bottom = 320.0
+text = "Restart"
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

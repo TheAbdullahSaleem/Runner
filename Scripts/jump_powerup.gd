@@ -14,5 +14,4 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
-		Globals.activate_jumppup()
-		queue_free()
+		Globals.Dead = true
