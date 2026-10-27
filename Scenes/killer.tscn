@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://f1cea6a5j073"]
 
-[ext_resource type="Script" uid="uid://cnhcqldmxxrvu" path="res://Scripts/jump_powerup.gd" id="1_kjvon"]
+[ext_resource type="Script" uid="uid://cnhcqldmxxrvu" path="res://Scripts/killer.gd" id="1_kjvon"]
 [ext_resource type="Texture2D" uid="uid://dymvcsg7dktod" path="res://Assets/crystal/kill_W1.png" id="2_g7fb5"]
 [ext_resource type="Texture2D" uid="uid://dgclkoj6iompr" path="res://Assets/crystal/kill_Gemini_Generated_Image_rbg3glrbg3glrbg3.png" id="3_282w8"]
 [ext_resource type="Texture2D" uid="uid://bcht1covvdstc" path="res://Assets/crystal/kill_Gemini_Generated_Image_mig8h1mig8h1mig8.png" id="4_srufm"]

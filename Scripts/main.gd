@@ -10,7 +10,6 @@ var killer1 := preload("res://Scenes/killer.tscn")
 @onready var timer_3: Timer = $Timer3
 @onready var timer_4: Timer = $Timer4
 @onready var player: CharacterBody3D = $Player
-@onready var killer: Area3D = $killer
 @onready var dead_screen: CanvasLayer = $Dead
 
 
@@ -35,22 +34,22 @@ func spawning_crystal() -> void :
 	for i in 9:
 		var crystal_instance = crystal.instantiate()
 		add_child(crystal_instance)
-		crystal_instance.global_position = Vector3(lane,1.1,player.global_position.z+15+i)
+		crystal_instance.global_position = Vector3(lane,1.1,player.global_position.z+20+i)
 func spawning_speedpowerup() -> void :
 	var speed_powerup_instance = speed_powerup.instantiate()
 	add_child(speed_powerup_instance)
 	var lane = (randi_range(0,3) - 1.5) * 2
-	speed_powerup_instance.global_position = Vector3(lane,1.1,player.global_position.z+15)
+	speed_powerup_instance.global_position = Vector3(lane,1.1,player.global_position.z+20)
 func spawning_jumppowerup() -> void :
 	var jump_powerup_instance = jump_powerup.instantiate()
 	add_child(jump_powerup_instance)
 	var lane = (randi_range(0,3) - 1.5) * 2
-	jump_powerup_instance.global_position = Vector3(lane,1.1,player.global_position.z+15)
+	jump_powerup_instance.global_position = Vector3(lane,1.1,player.global_position.z+20)
 func spawning_killers() -> void :
 	var killer_instance = killer1.instantiate()
 	add_child(killer_instance)
 	var lane = (randi_range(0,3) - 1.5) * 2
-	killer_instance.global_position = Vector3(lane,1.1,player.global_position.z+15)
+	killer_instance.global_position = Vector3(lane,0,player.global_position.z+20)
 func spawning_platform():
 	for i in 3:
 		last_platform +=23

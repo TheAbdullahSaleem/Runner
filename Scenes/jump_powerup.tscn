@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://ri1lackoaov2"]
 
-[ext_resource type="Script" uid="uid://cnhcqldmxxrvu" path="res://Scripts/jump_powerup.gd" id="1_r34pa"]
+[ext_resource type="Script" uid="uid://dip8j00yokw43" path="res://Scripts/jump_powerup.gd" id="1_r34pa"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kf11u"]
-size = Vector3(0.46850586, 1.6115112, 0.7684326)
+size = Vector3(1.4244804, 2.052719, 1.4427948)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y5c1n"]
 resource_name = "Material.004"

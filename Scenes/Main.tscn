@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://ba4mkhe2f7lma" path="res://Scenes/ui.tscn" id="2_idj7w"]
 [ext_resource type="PackedScene" uid="uid://co0byoahjpgsl" path="res://Scenes/Dead.tscn" id="2_v1gob"]
 [ext_resource type="PackedScene" uid="uid://cugbu4w0rbbx5" path="res://Platform.tscn" id="4_rgh2o"]
-[ext_resource type="PackedScene" uid="uid://f1cea6a5j073" path="res://Scenes/killer.tscn" id="5_pbw6q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rgh2o"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -25,9 +24,6 @@ script = ExtResource("1_rgh2o")
 [node name="Dead" parent="." unique_id=1046737756 instance=ExtResource("2_v1gob")]
 layer = 3
 
-[node name="killer" parent="." unique_id=1193938432 instance=ExtResource("5_pbw6q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.231659)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=111177505]
 environment = SubResource("Environment_v1gob")
 
@@ -45,11 +41,11 @@ wait_time = 5.0
 autostart = true
 
 [node name="Timer2" type="Timer" parent="." unique_id=288887583]
-wait_time = 3.0
+wait_time = 36.0
 autostart = true
 
 [node name="Timer3" type="Timer" parent="." unique_id=1493424127]
-wait_time = 3.0
+wait_time = 31.0
 autostart = true
 
 [node name="StaticBody3D" parent="." unique_id=259303392 instance=ExtResource("4_rgh2o")]
