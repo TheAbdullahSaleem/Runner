@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Player.tscn" id="1_r150o"]
 [ext_resource type="Script" uid="uid://cynea2ebogkdg" path="res://Scripts/main.gd" id="1_rgh2o"]
 [ext_resource type="PackedScene" uid="uid://ba4mkhe2f7lma" path="res://Scenes/ui.tscn" id="2_idj7w"]
+[ext_resource type="PackedScene" uid="uid://cugbu4w0rbbx5" path="res://Platform.tscn" id="4_rgh2o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rgh2o"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -29,11 +30,6 @@ shadow_enabled = true
 [node name="Player" parent="." unique_id=1728798874 instance=ExtResource("1_r150o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1464276, 0, 0)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1037971797]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1427381, 0)
-use_collision = true
-size = Vector3(9, 0.2, 1000)
-
 [node name="Score" parent="." unique_id=1095941771 instance=ExtResource("2_idj7w")]
 
 [node name="Timer" type="Timer" parent="." unique_id=1437148557]
@@ -47,3 +43,8 @@ autostart = true
 [node name="Timer3" type="Timer" parent="." unique_id=1493424127]
 wait_time = 79.0
 autostart = true
+
+[node name="StaticBody3D" parent="." unique_id=259303392 instance=ExtResource("4_rgh2o")]
+
+[node name="StaticBody3D2" parent="." unique_id=1348916041 instance=ExtResource("4_rgh2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 23)

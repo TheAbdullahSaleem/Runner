@@ -7,7 +7,7 @@ var distance_covered : int = 0
 @export var boost_durtion : float = 30.0
 var jump_powerup : bool = false
 var jump_powerup_timer := 0.0
-
+var Dead : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
