@@ -6,6 +6,13 @@
 process_mode = 3
 script = ExtResource("1_j28xj")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1285884182]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Control" type="Control" parent="." unique_id=805950470]
 process_mode = 3
 layout_mode = 3
@@ -18,10 +25,20 @@ grow_vertical = 2
 [node name="Button" type="Button" parent="Control" unique_id=100133756]
 process_mode = 3
 layout_mode = 0
-offset_left = 618.0
-offset_top = 289.0
-offset_right = 683.0
-offset_bottom = 320.0
+offset_left = 602.0
+offset_top = 229.0
+offset_right = 667.0
+offset_bottom = 260.0
 text = "Restart"
 
+[node name="Button2" type="Button" parent="Control" unique_id=70909303]
+process_mode = 3
+layout_mode = 0
+offset_left = 589.0
+offset_top = 302.0
+offset_right = 693.0
+offset_bottom = 333.0
+text = "MAIN MENU"
+
 [connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Button2" to="." method="_on_button_2_pressed"]

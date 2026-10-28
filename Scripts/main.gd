@@ -11,6 +11,8 @@ var killer1 := preload("res://Scenes/killer.tscn")
 @onready var timer_4: Timer = $Timer4
 @onready var player: CharacterBody3D = $Player
 @onready var dead_screen: CanvasLayer = $Dead
+@onready var canvas_layer: CanvasLayer = $CanvasLayer
+@onready var pause_screen: CanvasLayer = $pause_screen
 
 
 # Called when the node enters the scene tree for the first time.
@@ -29,6 +31,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Globals.Dead == true:
 		dead()
+	if Input.is_action_just_pressed("pause"):
+		Globals.pause = true
+		pause_screen.show()
+		get_tree().paused = true
 func spawning_crystal() -> void :
 	var lane = (randi_range(0,3) - 1.5) * 2
 	for i in 9:
@@ -60,4 +66,3 @@ func dead():
 	Globals.Dead = false
 	dead_screen.show()
 	get_tree().paused = true
-	

@@ -9,6 +9,9 @@ var jump_powerup : bool = false
 var jump_powerup_timer := 0.0
 var Dead : bool = false
 var restart : bool = false
+var menu : bool = true
+var pause : bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -25,6 +28,13 @@ func activate_jumppup():
 	jump_powerup = true
 	jump_powerup_timer = boost_durtion
 func restart1():
-	Globals.restart = false
+	menu = false
+	restart = false
+	pause = false
 	get_tree().paused = false
 	get_tree().reload_current_scene()
+func pause1():
+	if pause:
+		get_tree().paused = true
+	else :
+		get_tree().paused = false

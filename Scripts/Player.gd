@@ -67,11 +67,13 @@ func _physics_process(delta: float) -> void:
 		Globals.speed_powerup = false
 		anim_tree.set("parameters/TimeScale/scale",run_anim_speed)
 		velocity.z = speed
+	if Globals.jump_powerup:
+		Globals.jump_powerup_timer -= delta
+
 
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		if Globals.jump_powerup:
 			velocity.y = boosted_jump
-			Globals.jump_powerup_timer -= delta
 
 		if Globals.jump_powerup_timer <= 0.2:
 			Globals.jump_powerup = false

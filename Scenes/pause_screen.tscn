@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://chirq7ogkybgr"]
+
+[ext_resource type="Script" uid="uid://d0sljnnnao7l2" path="res://Scripts/pause_screen.gd" id="1_xub4q"]
+
+[node name="pause_screen" type="CanvasLayer" unique_id=1046737756]
+process_mode = 3
+script = ExtResource("1_xub4q")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1285884182]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="." unique_id=805950470]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Control" unique_id=100133756]
+process_mode = 3
+layout_mode = 0
+offset_left = 602.0
+offset_top = 229.0
+offset_right = 667.0
+offset_bottom = 260.0
+text = "Restart"
+
+[node name="Button2" type="Button" parent="Control" unique_id=70909303]
+process_mode = 3
+layout_mode = 0
+offset_left = 589.0
+offset_top = 302.0
+offset_right = 693.0
+offset_bottom = 333.0
+text = "MAIN MENU"
+
+[node name="Button3" type="Button" parent="Control" unique_id=1173826883]
+process_mode = 3
+layout_mode = 0
+offset_left = 586.0
+offset_top = 180.0
+offset_right = 690.0
+offset_bottom = 211.0
+text = "RESUME"
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Control/Button3" to="." method="_on_button_3_pressed"]
