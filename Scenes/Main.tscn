@@ -45,11 +45,11 @@ wait_time = 5.0
 autostart = true
 
 [node name="Timer2" type="Timer" parent="." unique_id=288887583]
-wait_time = 36.0
+wait_time = 46.0
 autostart = true
 
 [node name="Timer3" type="Timer" parent="." unique_id=1493424127]
-wait_time = 31.0
+wait_time = 57.0
 autostart = true
 
 [node name="StaticBody3D" parent="." unique_id=259303392 instance=ExtResource("4_rgh2o")]

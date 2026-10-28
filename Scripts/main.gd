@@ -29,6 +29,10 @@ func _ready() -> void:
 		dead_screen.process_mode = Node.PROCESS_MODE_ALWAYS
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	timer.wait_time -= 0.0001
+	timer_2.wait_time -= 0.0001
+	timer_3.wait_time -= 0.0001
+	timer_4.wait_time -= 0.0001
 	if Globals.Dead == true:
 		dead()
 	if Input.is_action_just_pressed("pause"):
